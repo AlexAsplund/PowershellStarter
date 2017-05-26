@@ -27,7 +27,8 @@ namespace PowershellStarter
         public PowershellStarterService()
         {
             InitializeComponent();
-            if (!System.Diagnostics.EventLog.SourceExists("PowershellStarter"))
+
+            if (!System.Diagnostics.EventLog.SourceExists(ConfigurationManager.AppSettings["EventLogSource"]))
             {
                 System.Diagnostics.EventLog.CreateEventSource(ConfigurationManager.AppSettings["EventLogSource"], ConfigurationManager.AppSettings["EventLog"]);
 
