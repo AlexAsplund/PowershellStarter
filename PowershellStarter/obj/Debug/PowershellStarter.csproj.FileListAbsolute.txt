@@ -1,0 +1,7 @@
+c:\users\landatorn\documents\visual studio 2015\Projects\PowershellStarter\PowershellStarter\bin\Debug\PowershellStarter.exe.config
+c:\users\landatorn\documents\visual studio 2015\Projects\PowershellStarter\PowershellStarter\bin\Debug\PowershellStarter.exe
+c:\users\landatorn\documents\visual studio 2015\Projects\PowershellStarter\PowershellStarter\bin\Debug\PowershellStarter.pdb
+c:\users\landatorn\documents\visual studio 2015\Projects\PowershellStarter\PowershellStarter\obj\Debug\PowershellStarter.csproj.GenerateResource.Cache
+c:\users\landatorn\documents\visual studio 2015\Projects\PowershellStarter\PowershellStarter\obj\Debug\PowershellStarter.exe
+c:\users\landatorn\documents\visual studio 2015\Projects\PowershellStarter\PowershellStarter\obj\Debug\PowershellStarter.pdb
+C:\Users\landatorn\Documents\Visual Studio 2015\Projects\PowershellStarter\PowershellStarter\obj\Debug\PowershellStarter.PowershellStarterService.resources
