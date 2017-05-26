@@ -27,7 +27,7 @@ namespace PowershellStarter
         public PowershellStarterService()
         {
             InitializeComponent();
-
+            // Set eventlog
             if (!System.Diagnostics.EventLog.SourceExists(ConfigurationManager.AppSettings["EventLogSource"]))
             {
                 System.Diagnostics.EventLog.CreateEventSource(ConfigurationManager.AppSettings["EventLogSource"], ConfigurationManager.AppSettings["EventLog"]);
@@ -37,6 +37,7 @@ namespace PowershellStarter
             eventLog1.Log = ConfigurationManager.AppSettings["EventLog"];
         }
 
+        // For fetching exited event from script and forcing service to terminate
         protected virtual void onScriptExited(object sender, EventArgs e)
         {
 
@@ -52,6 +53,8 @@ namespace PowershellStarter
             string ScriptPath = ConfigurationManager.AppSettings["ScriptPath"];
             string ScriptParameters = ConfigurationManager.AppSettings["ScriptParameters"];
             
+            // Define process startinfo
+
             process.CreateNoWindow = true;
             process.UseShellExecute = false;
             process.WorkingDirectory = ConfigurationManager.AppSettings["WorkingDirectory"];
@@ -60,8 +63,7 @@ namespace PowershellStarter
             process.FileName = "C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe";
             process.Arguments = "-ExecutionPolicy Unrestricted -File " + ScriptPath + " " + ScriptParameters;
 
-
-
+            // Define process error/output event handling
 
             Process PSProcess = new System.Diagnostics.Process();
             PSProcess.StartInfo = process;
@@ -74,12 +76,6 @@ namespace PowershellStarter
             PSProcess.BeginOutputReadLine();
             PSProcess.BeginErrorReadLine();
 
-
-
-
-
-
-
             eventLog1.WriteEntry("PowershellStarter Started powershell service with scriptpath:" + ScriptPath + " and parameter: " + ScriptParameters);
 
             
@@ -89,7 +85,7 @@ namespace PowershellStarter
         
         protected override void OnStop()
         {
-
+            // If script hasn't already exited, kill it
             if (!p.HasExited) {
 
                 p.Kill();
