@@ -12,7 +12,6 @@ C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\bin\Release\
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\bin\Release\PowershellStarter.application
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\bin\Release\PowershellStarter.exe
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\bin\Release\PowershellStarter.pdb
-C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.csprojResolveAssemblyReference.cache
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.PowershellStarterService.resources
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.csproj.GenerateResource.Cache
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.exe.manifest

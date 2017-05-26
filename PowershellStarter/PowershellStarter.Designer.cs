@@ -37,7 +37,7 @@
             // 
             // PowershellStarterService
             // 
-            this.ServiceName = "PSStarter";
+            this.ServiceName = "PSSvc";
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
 
         }
