@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Application Files\PowershellStarter_0_1_1_1\PowershellStarter.exe.manifest" size="3512">
+    <dependentAssembly dependencyType="install" codebase="PowershellStarter.exe.manifest" size="3512">
       <assemblyIdentity name="PowershellStarter.exe" version="0.1.1.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LFgLGgr6Rr0ST2xKIQyDEn/8G2ENbI2/VnyYfUDWwek=</dsig:DigestValue>
+        <dsig:DigestValue>BPPNVEovWM03xM8G1qSnPxzAweh6BoaU2+IxVHyV21w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
