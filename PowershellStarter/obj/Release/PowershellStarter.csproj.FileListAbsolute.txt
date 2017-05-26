@@ -16,3 +16,4 @@ C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.csproj.GenerateResource.Cache
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.exe.manifest
 C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.application
+C:\Users\landatorn\Source\Repos\PowershellStarter\PowershellStarter\obj\Release\PowershellStarter.csprojResolveAssemblyReference.cache
