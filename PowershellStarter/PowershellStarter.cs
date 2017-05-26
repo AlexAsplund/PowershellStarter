@@ -22,7 +22,6 @@ namespace PowershellStarter
         public string output;
         public string errorOutput;
         public ProcessStartInfo process = new ProcessStartInfo();
-        public Process p;
 
         public PowershellStarterService()
         {
@@ -42,6 +41,9 @@ namespace PowershellStarter
         {
 
             eventLog1.WriteEntry("Script is no longer running, terminating service...");
+
+            // This sends and error på event log.
+            // Dirty as hell but works
             Environment.FailFast("Script no longer running, service stopped.");
 
 
@@ -63,7 +65,7 @@ namespace PowershellStarter
             process.FileName = "C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe";
             process.Arguments = "-ExecutionPolicy Unrestricted -File " + ScriptPath + " " + ScriptParameters;
 
-            // Define process error/output event handling
+            // Define process error/output event handling and start it.
 
             Process PSProcess = new System.Diagnostics.Process();
             PSProcess.StartInfo = process;
@@ -73,6 +75,9 @@ namespace PowershellStarter
             PSProcess.OutputDataReceived += (sender, EventArgs) => eventLog1.WriteEntry(EventArgs.Data);
             PSProcess.ErrorDataReceived += (sender, EventArgs) => eventLog1.WriteEntry(EventArgs.Data);
             PSProcess.Start();
+
+            // Begin*ReadLine must be set after process has executed.
+
             PSProcess.BeginOutputReadLine();
             PSProcess.BeginErrorReadLine();
 

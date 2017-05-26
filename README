@@ -1,1 +1,24 @@
-Start of an service wrapper for powershell
+Disclaimer: 2 days ago was the first time that I touched C# in almost 10 years and I started with GIT this morning so it's everything but flawless and is still a work in progress.
+ 
+ 
+ 
+I wanted something that would run powershell scripts as a service easily and I never was a fan of running it with taskscheduler.
+This windows service reads the path of the script and it's arguments from the app.conf file so you can run any powershell script that you want (i think).
+It also redirects output and errors to eventlog and terminates itself if the script would stop running.
+Link to Github
+I have tested it on Windows Server 2012 and Windows 10.
+ 
+Tutorial
+
+Start with downloading the current compile (link above) or compile it yourself and put it some place good.
+Open PowershellStarter.exe.config in notepad
+Edit ScriptPath to point to your powershell script.
+Edit ScriptParameters or leave it empty if you don't have any parameters.
+You can edit Eventlog and EventlogSource if you have any special preference on how you want to log it.
+Start powershell as admin and enter:
+New-Service -Name PowershellStarter -DisplayName PowershellStarter -BinaryPathName C:\Path\To\PowershellStarter.exe -Description "Powershellstarter service" -StartupType Automatic
+"Powershellstarter" can be any name you want.
+And finally:
+Start-Service PowershellStarter
+Done!
+If anything messes up it should be visible under the application eventlog.
