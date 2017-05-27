@@ -1,4 +1,14 @@
-﻿using System;
+﻿//////////////////////////////////////////////////////////////////////
+//
+// Author: AlexSwede@Github, VapingSwede@reddit
+//
+//
+//
+//
+//////////////////////////////////////////////////////////////////////
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +32,7 @@ namespace PowershellStarter
         public string output;
         public string errorOutput;
         public ProcessStartInfo process = new ProcessStartInfo();
+        public Process PSProcess = new System.Diagnostics.Process();
 
         public PowershellStarterService()
         {
@@ -32,8 +43,11 @@ namespace PowershellStarter
                 System.Diagnostics.EventLog.CreateEventSource(ConfigurationManager.AppSettings["EventLogSource"], ConfigurationManager.AppSettings["EventLog"]);
 
             }
+
             eventLog1.Source = ConfigurationManager.AppSettings["EventLogSource"];
             eventLog1.Log = ConfigurationManager.AppSettings["EventLog"];
+
+
         }
 
         // For fetching exited event from script and forcing service to terminate
@@ -42,7 +56,7 @@ namespace PowershellStarter
 
             eventLog1.WriteEntry("Script is no longer running, terminating service...");
 
-            // This sends and error på event log.
+            // This sends an error to event log.
             // Dirty as hell but works
             Environment.FailFast("Script no longer running, service stopped.");
 
@@ -67,7 +81,7 @@ namespace PowershellStarter
 
             // Define process error/output event handling and start it.
 
-            Process PSProcess = new System.Diagnostics.Process();
+            
             PSProcess.StartInfo = process;
             PSProcess.EnableRaisingEvents = true;
             PSProcess.Exited += new System.EventHandler(onScriptExited);
@@ -91,9 +105,9 @@ namespace PowershellStarter
         protected override void OnStop()
         {
             // If script hasn't already exited, kill it
-            if (!p.HasExited) {
-
-                p.Kill();
+            if (!PSProcess.HasExited) {
+                
+                PSProcess.Kill();
             }
 
             eventLog1.WriteEntry("PowershellStarter Stopped.");
