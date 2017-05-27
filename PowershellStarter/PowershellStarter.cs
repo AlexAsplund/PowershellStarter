@@ -43,8 +43,11 @@ namespace PowershellStarter
                 System.Diagnostics.EventLog.CreateEventSource(ConfigurationManager.AppSettings["EventLogSource"], ConfigurationManager.AppSettings["EventLog"]);
 
             }
+
             eventLog1.Source = ConfigurationManager.AppSettings["EventLogSource"];
             eventLog1.Log = ConfigurationManager.AppSettings["EventLog"];
+
+
         }
 
         // For fetching exited event from script and forcing service to terminate
